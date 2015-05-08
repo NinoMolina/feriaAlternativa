@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="iso-8859-1">
+  <base href="/FeriaAlternativa/app/">
+  <!--<meta charset="UTF-8"> -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Feria Alternativa Jesus Maria</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="bower_components/bootstrap-css-only/css/bootstrap.min.css">
+  <link rel="stylesheet" href="feriaAlternativa.css">
+  <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <!-- NAVIGATION BAR -->
+  <div class="navbar-wrapper">
+    <div class="container" ng-controller="IndexCtrl">
+
+      <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#home" ng-click="reload()">Feria Alternativa</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li ng-controller="DropdownCtrl" class="dropdown" dropdown>
+                <a href class="dropdown-toggle" dropdown-toggle>
+                  Productos
+                  <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li ng-repeat="choice in items">
+                    <a href>{{choice}}</a>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="#dondeEstamos">Dónde Estamos</a></li>
+              <li><a href="#participa">Participa</a></li>
+              <li><a href="#quienesSomos">Quiénes Somos</a></li>
+              <li><a href="#contactanos">Contáctanos</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    </div>
+  </div>
+  <!-- END NAVIGATION BAR -->
+
+  <div ng-view></div>
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+  <script src='bower_components/lodash/dist/lodash.min.js'></script>
+  <script src='bower_components/angular-google-maps/dist/angular-google-maps.min.js'></script>
+  <script src="app.js"></script>
+  <script src="indexController.js"></script>
+  <script src="home/homeController.js"></script>
+  <script src="facebook/facebookController.js"></script>
+  <script src='dondeEstamos/dondeEstamosController.js'></script>
+  <script src="contactanos/contactanosController.js"></script>
+  <script src="quienesSomos/quienesSomosController.js"></script>
+  <script src="participa/participaController.js"></script>
+</body>
+</html>
