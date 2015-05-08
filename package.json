@@ -5,6 +5,10 @@
   "description": "A starter project for AngularJS",
   "repository": "https://github.com/angular/angular-seed",
   "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
   "devDependencies": {
     "karma": "~0.10",
     "protractor": "^1.1.1",
@@ -15,8 +19,9 @@
   },
   "engines": {
     "node": "0.12.2"
-  },
-  "scripts": {
+  }
+
+  /*"scripts": {
     "postinstall": "bower install",
 
     "prestart": "npm install",
@@ -33,5 +38,5 @@
     "protractor": "protractor e2e-tests/protractor.conf.js",
 
     "update-index-async": "node -e \"require('shelljs/global'); sed('-i', /\\/\\/@@NG_LOADER_START@@[\\s\\S]*\\/\\/@@NG_LOADER_END@@/, '//@@NG_LOADER_START@@\\n' + sed(/sourceMappingURL=angular-loader.min.js.map/,'sourceMappingURL=bower_components/angular-loader/angular-loader.min.js.map','app/bower_components/angular-loader/angular-loader.min.js') + '\\n//@@NG_LOADER_END@@', 'app/index-async.html');\""
-  }
+  }*/
 }
