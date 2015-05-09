@@ -1,14 +1,13 @@
-var http = require('http'),
-    fs = require('fs');
+var express = require('express');
+var app = express();
+var path = require('path');
 
-
-fs.readFile('./app/index.html', function (err, html) {
-  if (err) {
-    throw err;
-  }
-  http.createServer(function(request, response) {
-    response.writeHeader(200, {"Content-Type": "text/html"});
-    response.write(html);
-    response.end();
-  }).listen(8000);
+app.use(express.static(__dirname + '/app'));
+//add this so the browser can GET the bower files
+app.use('/bower_components', express.static(__dirname + '/bower_components'));
+// viewed at http://localhost:8080
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname + '/index.html'));
 });
+
+app.listen(8080);

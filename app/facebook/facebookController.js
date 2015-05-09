@@ -2,7 +2,7 @@
 
 angular.module('facebook', [])
 .controller('FacebookCtrl', ['$scope',function($scope) {
-        $scope.template = {url: 'facebook/facebook.html'};
+        $scope.template = {url: '/facebook/facebook.html'};
 }]);
 
 (function(d, s, id) {

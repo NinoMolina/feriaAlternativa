@@ -18,6 +18,6 @@ angular.module('myApp')
     };
 }).controller('IndexCtrl', ['$scope', '$window', function ($scope, $window) {
     $scope.reload = function() {
-        $window.location.href = '/FeriaAlternativa/app';
+        $window.location.href = '/';
     };
 }]);
