@@ -5,7 +5,6 @@ angular.module('myApp', [
     'ngRoute',
     'ui.bootstrap',
     'home',
-    'facebook',
     'dondeEstamos',
     'contactanos',
     'quienesSomos',
