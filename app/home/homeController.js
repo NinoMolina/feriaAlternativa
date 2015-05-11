@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('home', [])
-.controller('HomeCtrl', [ function() {
+.controller('HomeCtrl', ['$route','$templateCache', function($route,$templateCache) {
+
 }])
 .controller('CarouselDemoCtrl', function ($scope) {
         $scope.myInterval = 5000;
