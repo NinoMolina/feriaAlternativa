@@ -16,7 +16,7 @@ angular.module('myApp')
     $scope.status = {
         isopen: false
     };
-}).controller('IndexCtrl', ['$scope', '$window', function ($scope, $window) {
+}).controller('IndexCtrl', ['$scope','$window', function ($scope, $window) {
     $scope.reload = function() {
         $window.location.href = '/';
     };
