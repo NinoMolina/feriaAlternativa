@@ -5,8 +5,12 @@ angular.module('facebook', [])
         $scope.template = {url: '/facebook/facebook.html'};
         $scope.fbPage = 'https://www.facebook.com/instagram';
 
-        $scope.$on('$viewContentLoaded', function() {
-        });
+        $scope.reloadFB = function() {
+            $window.FB.XFBML.parse(document.getElementsByClassName('fb-page')[0]);
+            $window.FB._initialized = false;
+            $window.FB.init({appId: '174931712664653',status: true,cookie: true,xfbml: true,version: 'v2.3'});
+        };
+
 }]);
 
 var app = angular.module('myApp');
