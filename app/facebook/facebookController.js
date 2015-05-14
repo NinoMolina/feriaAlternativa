@@ -6,61 +6,71 @@ angular.module('facebook', [])
         $scope.fbPage = 'https://www.facebook.com/instagram';
 
         $scope.reloadFB = function() {
-            $window.FB.XFBML.parse(document.getElementsByClassName('fb-page')[0]);
-            $window.FB._initialized = false;
-            $window.FB.init({appId: '174931712664653',status: true,cookie: true,xfbml: true,version: 'v2.3'});
+            var fbpage = document.getElementsByClassName('fb-page')[0];
+            if(typeof fbpage != "undefined"){
+                $window.FB.XFBML.parse(fbpage);
+                $window.FB._initialized = false;
+                $window.FB.init({
+                    appId: '174931712664653',
+                    status: true,
+                    cookie: true,
+                    xfbml: true,
+                    version: 'v2.3'
+                });
+            }
         };
 
 }]);
 
-var app = angular.module('myApp');
-app.run(['$rootScope', '$window', function($rootScope, $window) {
+//var app = angular.module('myApp');
+//app.run(['$rootScope', '$window', function($rootScope, $window) {
+//
+//    $rootScope.user = {};
+//
+//    $window.fbAsyncInit = function () {
+//        // Executed when the SDK is loaded
+//
+//        FB.init({
+//
+//            /*
+//             The app id of the web app;
+//             To register a new app visit Facebook App Dashboard
+//             ( https://developers.facebook.com/apps/ )
+//             */
+//
+//            appId: '174931712664653',
+//
+//            /*
+//             Adding a Channel File improves the performance
+//             of the javascript SDK, by addressing issues
+//             with cross-domain communication in certain browsers.
+//             */
+//
+//            //channelUrl: 'app/channel.html',
+//
+//            /*
+//             Set if you want to check the authentication status
+//             at the start up of the app
+//             */
+//
+//            status: true,
+//
+//            /*
+//             Enable cookies to allow the server to access
+//             the session
+//             */
+//
+//            cookie: true,
+//
+//            /* Parse XFBML */
+//
+//            xfbml: true,
+//
+//            version: 'v2.3'
+//        });
+//    };
+//}]);
 
-    $rootScope.user = {};
-
-    $window.fbAsyncInit = function () {
-        // Executed when the SDK is loaded
-
-        FB.init({
-
-            /*
-             The app id of the web app;
-             To register a new app visit Facebook App Dashboard
-             ( https://developers.facebook.com/apps/ )
-             */
-
-            appId: '174931712664653',
-
-            /*
-             Adding a Channel File improves the performance
-             of the javascript SDK, by addressing issues
-             with cross-domain communication in certain browsers.
-             */
-
-            //channelUrl: 'app/channel.html',
-
-            /*
-             Set if you want to check the authentication status
-             at the start up of the app
-             */
-
-            status: true,
-
-            /*
-             Enable cookies to allow the server to access
-             the session
-             */
-
-            cookie: true,
-
-            /* Parse XFBML */
-
-            xfbml: true,
-
-            version: 'v2.3'
-        });
-    };
-}]);
 
 (function(d, FB) {
     FB = null;
